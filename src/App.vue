@@ -1,26 +1,33 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<main-layout/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LayoutMain from '@/layout/main.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'main-layout': LayoutMain 
   }
 }
 </script>
-
 <style>
+@import url(@/css/fontAwesome.css);
+@import url(@/css/flexBox.css);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
-  margin-top: 60px;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 </style>
