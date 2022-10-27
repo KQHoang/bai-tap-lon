@@ -261,4 +261,72 @@ li:nth-child(2):hover .sub-menu{
 .search-input-bottom input:focus-visible{
     outline: none !important;
 }
+<<<<<<< Updated upstream
+=======
+.main-footer{
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+}
+.top-footer{
+    background: #f3f3f3;
+    padding: 15px 0;
+}
+.container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1250px;
+}
+.title-email{
+    text-align: left;
+}
+.title-email .fa{
+    margin-right: 10px;
+}
+.input-footer{
+    position: relative;
+}
+.input-footer input{
+    height: 46px;
+    border: 1px solid #e7e7e7;
+    box-shadow: none;
+    height: 45px;
+    font-weight: 500;
+    padding: 0 20px;
+    background: #fbfbfb;
+    color: #252a2b;
+    width: 100%;
+}
+.input-footer input:focus-visible{
+    outline: none !important;;
+}
+.btn-register-email--footer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 45px;
+    right: 0;
+    top: 0;
+    padding: 0 12px;
+    background-color: black;
+    color: #fff;
+    font-size: 12px;
+}
+.hotline-footer{
+    display: flex;
+    align-items: center;
+}
+.hotline-footer .fa{
+    margin-right: 5px;
+}
+
+/* css phần main footer */
+.body-footer{
+    padding: 40px 0 30px;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+}
+>>>>>>> Stashed changes
 </style>
