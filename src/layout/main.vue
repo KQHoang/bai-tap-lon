@@ -3,7 +3,7 @@
     <div class="main-header">
         <div class="header-top">
             <div class="row">
-                <div class="logo col-lg-3 col-md-8">
+                <div class="logo col-sm-7 col-lg-3">
                     <img src="@/assets/images/logo_header.png" alt="">
                 </div>
                 <div class="search col-lg-7 hidden-sm" >
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="header-wap-icon col-lg-2 col-md-4 d-flex">
+                <div class="header-wap-icon col-sm-5 col-lg-2 d-flex">
                     <i class="fa fa-user-circle-o fa-xl" aria-hidden="true"></i>
                     <i class="fa fa-search fa-xl" aria-hidden="true"></i>
                     <i class="fa fa-shopping-bag fa-xl" aria-hidden="true"></i>
@@ -57,6 +57,32 @@
             </div>
         </div>
     </div>
+
+    <div class="main-footer w-100">
+        <div class="top-footer">
+            <div class="container-fluid row">
+                <div class="col-sm-12 col-lg-3">
+                    <div class="title-email">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        Đăng ký nhận tin
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-5 input-footer">
+                    <input type="text" placeholder="Nhập email của bạn">
+                    <div class="btn-register-email--footer">
+                        ĐĂNG KÝ
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 hotline-footer">
+                    <i class="fa fa-phone-square fa-xl" aria-hidden="true"></i>
+                    Hỗ trợ / Mua hàng: <span>097 328 58 86</span> 
+                </div>
+            </div>
+        </div>
+        <div class="body-footer">
+
+        </div>
+    </div>
 </div>
 </template>
 
@@ -71,15 +97,19 @@ export default {
 .row{
     align-items: center;
 }
-@media screen and (min-width: 960px){
+@media screen and (min-width: 992px){
     .logo img{
         max-height: 80px !important;
         max-width: 160px !important;
         cursor: pointer;
     }
+    .hotline-footer{
+        padding-left: 30px !important;
+    }
+    
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 992px){
     .main-header{
         padding: 0 !important;
     }
@@ -101,6 +131,17 @@ export default {
    }
    .display-sm{
         display: block !important;
+   }
+   .title-email{
+    margin-bottom: 20px !important;
+   }
+   .input-footer{
+    margin-bottom: 10px !important;
+   }
+   .hotline-footer{
+    padding-left: 0;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
    }
 }
 
@@ -261,12 +302,19 @@ li:nth-child(2):hover .sub-menu{
 .search-input-bottom input:focus-visible{
     outline: none !important;
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 .main-footer{
     /* position: fixed;
     bottom: 0;
     left: 0; */
+=======
+.main-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+>>>>>>> 2c282bcc4c8aa4f3f4c14e2e07231bc671c1a538
 }
 .top-footer{
     background: #f3f3f3;
@@ -328,5 +376,8 @@ li:nth-child(2):hover .sub-menu{
     border-bottom: 1px solid #e7e7e7;
     border-top: 1px solid #e7e7e7;
 }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 2c282bcc4c8aa4f3f4c14e2e07231bc671c1a538
 </style>
