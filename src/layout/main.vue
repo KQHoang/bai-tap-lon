@@ -302,20 +302,10 @@ li:nth-child(2):hover .sub-menu{
 .search-input-bottom input:focus-visible{
     outline: none !important;
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 .main-footer{
     /* position: fixed;
     bottom: 0;
-    left: 0; */
-=======
-.main-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
->>>>>>> 2c282bcc4c8aa4f3f4c14e2e07231bc671c1a538
-}
+    left: 0; */}
 .top-footer{
     background: #f3f3f3;
     padding: 15px 0;
