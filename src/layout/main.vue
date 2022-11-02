@@ -318,28 +318,46 @@ export default {
 }
 li:nth-child(3):hover .sub-menu{
     display: block !important;
+    -webkit-transform: rotate3d(0,0,0,0deg);
+    -moz-transform: rotate3d(0,0,0,0deg);
+    -o-transform: rotate3d(0,0,0,0deg);
+    -ms-transform: rotate3d(0,0,0,0deg);
+    transform: rotate3d(0,0,0,0deg);
 }
 
 li:nth-child(2):hover .sub-menu{
     display: block !important;
+    -webkit-transform: rotate3d(0,0,0,0deg);
+    -moz-transform: rotate3d(0,0,0,0deg);
+    -o-transform: rotate3d(0,0,0,0deg);
+    -ms-transform: rotate3d(0,0,0,0deg);
+    transform: rotate3d(0,0,0,0deg);
 }
 
 
 .main-nav .sub-menu{
-    z-index: 1;
-    position: absolute;
-    top: 46px;
-    background: #fff;
-    padding: 9px 18px;
-    white-space: nowrap;
+    color: #2c3e50;;
     text-align: left;
-    font-size: 14px;
-    display: none;
-    color: #252a2b;
-    /* transition: height 2s;
-    -moz-transition: height 2s;
-    -webkit-transition: height 2s;
-    -o-transition: height 2s; */
+    top: 46px;
+    padding: 9px 18px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-transform: rotate3d(1,0,0,-90deg);
+    -moz-transform: rotate3d(1,0,0,-90deg);
+    -o-transform: rotate3d(1,0,0,-90deg);
+    -ms-transform: rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    -o-transform-origin: 0 0 0;
+    -ms-transform-origin: 0 0 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    min-width: 190px;
 }
 .sub-menu>*:hover{
     color: #f94c43;
