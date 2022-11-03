@@ -80,7 +80,90 @@
             </div>
         </div>
         <div class="body-footer">
-
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-col">
+                        <div class="footer-title">
+                            <h4>HỆ THỐNG CỬA HÀNG</h4>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                <li>242 Thái Hà, Q.Đống Đa, HN</li>
+                                <li>20 Dương Quảng Hàm, Q.Cầu Giấy, HN</li>
+                                <li>11 Dương Quảng Hàm, Q.Cầu Giấy, HN</li>
+                                <li>63 Đại Cổ Việt, Q.Hai Bà Trưng, HN</li>
+                                <li>27 Chùa Bộc, Q.Đống Đa, HN</li>
+                                <li>296 Nguyễn Trãi, Q.Nam Từ Liêm, HN</li>
+                                <li>116 Hồ Tùng Mậu,Q.Cầu Giấy, HN</li>
+                                <li>24 Trần Phú, Hà Đông, HN</li>
+                                <li>346 Cầu Giấy, Q.Cầu Giấy, HN</li>
+                                <li>29 Phố Nhổn, Q.Nam Từ Liêm, HN</li>
+                                <li>69 Quang Trung, Hà Đông, HN</li>
+                                <li>272 Tô Hiệu, Q.Lê Chân, HP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-col">
+                        <div class="footer-title">
+                            <h4>CHÍNH SÁCH VÀ QUY ĐỊNH CHUNG</h4>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                <li>Hướng Dẫn Mua Hàng</li>
+                                <li>Hình Thức Thanh Toán</li>
+                                <li>Quy Định Về Bảo Mật Thông Tin</li>
+                                <li>Chính Sách Bảo Hành</li>
+                                <li>Chính Sách Đổi Hàng</li>
+                                <li>Chính Sách Vận Chuyển</li>
+                                <li>Điều Khoản Dịch Vụ</li>
+                                <li>Giới Thiệu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-col">
+                        <div class="footer-title">
+                            <h4>ĐỊA CHỈ</h4>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                <li><b>CÔNG TY CỔ PHẦN THỜI TRANG 360</b></li>
+                                <li>VPGD: Đội 6, Xã Phương Đình, Huyện Đan Phượng, Thành phố Hà nội, Việt nam</li>
+                                <li>Facebook thời trang nam: 360Boutique</li>
+                                <li>Hotline: 0986984483</li>
+                                <li>Email: 360boutique.vn@gmail.com</li>
+                                <li>Website: https://360boutique.vn/</li>
+                                <li>GPKD: 0107756568</li>
+                                <li><img src="@/assets/images/da-thong-bao.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-col">
+                        <div class="footer-title">
+                            <h4>Fanpage</h4>
+                        </div>
+                        <div class="footer-content">
+                            <ul>
+                                <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/360boutique.hn" 
+                                data-tabs="timeline" data-width="" data-height="300px" data-small-header="false" 
+                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" 
+                                fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=0&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2F360boutique.hn&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline&amp;width=">
+                                <span style="vertical-align: bottom; width: 340px; height: 300px;"><iframe name="f12fe76cd3f8e98" width="1000px" height="300px" data-testid="fb:page Facebook Social Plugin"
+                                title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v12.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2e81f196810f54%26domain%3D360boutique.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252F360boutique.vn%252Ff332f4c0ec1d094%26relation%3Dparent.parent&amp;container_width=0&amp;height=300&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2F360boutique.hn&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline&amp;width=" 
+                                style="border: none; visibility: visible; width: 340px; height: 300px;" class=""></iframe></span></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            Copyright © 2022 360boutique. All Rights Reserved
         </div>
     </div>
 </div>
@@ -221,6 +304,7 @@ export default {
     margin-right:  25px;
     padding-top: 10px;
     padding-bottom: 15px;
+    cursor: pointer;
 }
 .main-nav li:hover{
     color: #f94c43;
@@ -234,27 +318,46 @@ export default {
 }
 li:nth-child(3):hover .sub-menu{
     display: block !important;
+    -webkit-transform: rotate3d(0,0,0,0deg);
+    -moz-transform: rotate3d(0,0,0,0deg);
+    -o-transform: rotate3d(0,0,0,0deg);
+    -ms-transform: rotate3d(0,0,0,0deg);
+    transform: rotate3d(0,0,0,0deg);
 }
 
 li:nth-child(2):hover .sub-menu{
     display: block !important;
+    -webkit-transform: rotate3d(0,0,0,0deg);
+    -moz-transform: rotate3d(0,0,0,0deg);
+    -o-transform: rotate3d(0,0,0,0deg);
+    -ms-transform: rotate3d(0,0,0,0deg);
+    transform: rotate3d(0,0,0,0deg);
 }
 
 
 .main-nav .sub-menu{
-    position: absolute;
-    top: 46px;
-    background: yellow;
-    padding: 9px 18px;
-    white-space: nowrap;
+    color: #2c3e50;;
     text-align: left;
-    font-size: 14px;
-    display: none;
-    color: #252a2b;
-    /* transition: height 2s;
-    -moz-transition: height 2s;
-    -webkit-transition: height 2s;
-    -o-transition: height 2s; */
+    top: 46px;
+    padding: 9px 18px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    -webkit-transform: rotate3d(1,0,0,-90deg);
+    -moz-transform: rotate3d(1,0,0,-90deg);
+    -o-transform: rotate3d(1,0,0,-90deg);
+    -ms-transform: rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    -o-transform-origin: 0 0 0;
+    -ms-transform-origin: 0 0 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    min-width: 190px;
 }
 .sub-menu>*:hover{
     color: #f94c43;
@@ -303,10 +406,9 @@ li:nth-child(2):hover .sub-menu{
     outline: none !important;
 }
 .main-footer{
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    left: 0;
-}
+    left: 0; */}
 .top-footer{
     background: #f3f3f3;
     padding: 15px 0;
@@ -364,7 +466,45 @@ li:nth-child(2):hover .sub-menu{
 /* css phần main footer */
 .body-footer{
     padding: 40px 0 30px;
+    padding-right: 15px;
+    padding-left: 15px;
     border-bottom: 1px solid #e7e7e7;
     border-top: 1px solid #e7e7e7;
+}
+
+.body-footer .row{
+    align-items: flex-start !important;
+}
+.body-footer ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.body-footer h4{
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    margin: 0 0 20px;
+    position: relative;
+    line-height: 30px;
+}
+
+.footer-col{
+    padding: 0 15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.footer-col li{
+    margin-bottom: 10px;
+}
+.footer-content li img{
+    width: 185px;
+    margin: 5px 20px 20px 0;
+}
+.footer-content li{
+    cursor: pointer;
+}
+.bottom-footer{
+    padding: 20px 0;
 }
 </style>
