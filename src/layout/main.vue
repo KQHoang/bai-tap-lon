@@ -64,7 +64,7 @@
                 <div class="col-sm-12 col-lg-3">
                     <div class="title-email">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        Đăng ký nhận tin
+                        Đăng ký nhận tin 
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-5 input-footer">
