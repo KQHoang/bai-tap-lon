@@ -1,14 +1,16 @@
 <template>
-<main-layout/>
+<!-- <main-layout/> -->
+<home-layout/>
 </template>
 
 <script>
 import LayoutMain from '@/layout/main.vue'
-
+import LayoutHome from '@/layout/home.vue'
 export default {
   name: 'App',
   components: {
-    'main-layout': LayoutMain 
+    'main-layout': LayoutMain,
+    'home-layout':LayoutHome
   }
 }
 </script>
