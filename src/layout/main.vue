@@ -36,7 +36,7 @@
                                         <div class="cart-pro-delete">
                                             <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                         </div>
-                                    </div>   
+                                    </div> 
                                     <div class="cart-product">
                                         <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
                                         <div class="info-product">
@@ -46,7 +46,7 @@
                                         <div class="cart-pro-delete">
                                             <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                         </div>
-                                    </div>   
+                                    </div>
                                     <div class="cart-product">
                                         <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
                                         <div class="info-product">
@@ -56,7 +56,17 @@
                                         <div class="cart-pro-delete">
                                             <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                         </div>
-                                    </div>    
+                                    </div>
+                                    <div class="cart-product">
+                                        <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
+                                        <div class="info-product">
+                                            <div class="info-pro-name">Áo nỉ nam ANHTK311 - Đen, S</div>
+                                            <div class="info-pro-money"><b>449.000<sup><u>đ</u></sup></b> x 1</div>
+                                        </div>
+                                        <div class="cart-pro-delete">
+                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="total-money">
                                     <span>Tổng tiền: </span>
@@ -349,7 +359,7 @@ export default {
 .header-wap-icon{
     justify-content: end;
 }
-
+/* CSS cho giỏ hàng bên phải */
 /* Header-cart */
 .header-wap-icon .header-cart-wap{
     position: relative;
@@ -380,6 +390,12 @@ export default {
 .header-cart-list .cart-list-product{
     padding-bottom: 20px;
 }
+.cart-list-product .show-product{
+    min-height: 50px;
+    max-height: 360px;
+    overflow: auto;
+}
+
 .show-product .cart-product{
     display: flex;
     justify-content: space-between;
@@ -431,7 +447,8 @@ export default {
 .header-cart-list .btn-see-cart:hover{
     background-color: #666;
 }
-/* Kết thúc */
+/* Kết thúc css giỏ hàng góc bên phải */
+
 .header-wap-icon .fa{
     margin: 8px 5px 0;
     cursor: pointer;
