@@ -22,10 +22,37 @@
                 <i class="fa fa-user-circle-o fa-xl" aria-hidden="true"></i>
             </router-link>
             <i class="fa fa-search fa-xl" aria-hidden="true"></i>
-            <router-link to="/shopping">
+            <div class="header-cart-wap">
+              <router-link to="/shopping">
                 <i class="fa fa-shopping-bag fa-xl" aria-hidden="true"></i>
-            </router-link>
-            
+              </router-link>
+              <span class="header-cart-notice">{{totalQuatity}}</span>
+              <!-- Không có sản phẩm: thêm class header-cart-list-nopro -->
+              <div class="header-cart-list">
+                <div class="title-nocart">
+                  <span>Chưa có sản phẩm nào</span>
+                </div>
+                <div class="cart-list-product">
+                  <div class="show-product">
+                    <div v-for="pro in productsCart" :key="pro.product.id" class="cart-product">
+                      <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
+                      <div class="info-product">
+                        <div class="info-pro-name">{{pro.product.name}}</div>
+                        <div class="info-pro-money"><b>{{pro.product.price}}<sup><u>đ</u></sup></b> x {{pro.quatity}}</div>
+                      </div>
+                      <div class="cart-pro-delete">
+                        <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="total-money">
+                    <span>Tổng tiền: </span>
+                    <span class="total-money-num"><b>{{totalMoney}}<sup><u>đ</u></sup></b></span>
+                  </div>
+                </div>
+                <button class="btn-see-cart" @click="btnSeeCart">Xem giỏ hàng</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -395,6 +422,101 @@ body{
 .header-wap-icon{
     justify-content: end;
 }
+/* CSS cho giỏ hàng bên phải */
+/* Header-cart */
+.header-wap-icon .header-cart-wap{
+    position: relative;
+}
+.header-cart-wap .header-cart-list{
+    position: absolute;
+    top: 100%;
+    right: 4px;
+    background-color: #ffff;
+    width: 400px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px #ccc;
+    z-index: 3;
+    display: none;
+    padding: 30px 20px;
+}
+.header-cart-wap:hover .header-cart-list{
+    display: block;
+}
+.header-cart-list-nopro .title-nocart{
+    display: block;
+    padding-bottom: 20px;
+}
+.title-nocart{
+    display: none;
+    text-align: center;
+}
+.header-cart-list .cart-list-product{
+    padding-bottom: 20px;
+}
+.cart-list-product .show-product{
+    min-height: 50px;
+    max-height: 360px;
+    overflow: auto;
+}
+
+.show-product .cart-product{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.cart-product>img{
+    width: 100px;
+}
+.cart-product .info-product{
+    padding: 0 10px;
+    text-align: left;
+}
+.cart-product .info-product .info-pro-name{
+    padding-bottom: 10px;
+}
+.info-product .cart-pro-delete .fa{
+    margin-top: 0 !important;
+}
+.cart-product .cart-pro-delete>button{
+    color: #252a2b;
+    border: none;
+    background: none;
+}
+.cart-product .cart-pro-delete>button:hover{
+    color: red;
+}
+
+.cart-list-product .total-money{
+    text-align: right;
+}
+.total-money .total-money-num{
+    font-size: 24px;
+    line-height: 24px;
+}
+.header-wap-icon .header-cart-notice{
+    position: absolute;
+    top: 0;
+    right: -6px;
+    padding: 2px 6px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 50%;
+    border: 2px solid #e7e7e7;
+    background-color: #252a2b;
+    color: #fff;
+}
+.header-cart-list .btn-see-cart{
+    width: 100%;
+    line-height: 48px;
+    border: none;
+    background-color: #222222;
+    color: #fff;
+    font-size: 16px;
+}
+.header-cart-list .btn-see-cart:hover{
+    background-color: #666;
+}
+/* Kết thúc css giỏ hàng góc bên phải */
 .header-wap-icon .fa{
     margin: 8px 5px 0;
     cursor: pointer;

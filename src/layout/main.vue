@@ -213,17 +213,13 @@
 </template>
 
 <script>
-// import CartVue from '@/view/Cart.vue';
-// import productDetailVue from './product-detail.vue';
 export default {
     name: "MainLayout",
     components: {
-        // CartVue,
-        // productDetailVue
     },
     data(){
         return{
-            isShowCart: false,
+            
             productsCart: [{product:{id:1, name:"Áo nỉ nam ANHTK311 lalalalalalalaaaaaa - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
             {product:{id:2, name:"Áo nỉ nam ANHTK310 - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
             {product:{id:3, name:"Áo nỉ nam ANHTK312  - Đen, S", price:559}, quatity: 2, totalPro: 898}, 

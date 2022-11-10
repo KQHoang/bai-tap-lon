@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import CartVue from "./view/Cart.vue"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 
@@ -17,7 +16,6 @@ const routes = [
     { path: '/mainuser', component: MainUser },
     { path: '/', component: HomeLayout },
     { path: '/login', component: LoginLayout },
-    { path: '/cart', component: CartVue },
     { path: '/detail/:id', component: ProDetail },
 
 ]
