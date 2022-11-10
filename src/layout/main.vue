@@ -213,9 +213,63 @@
 </template>
 
 <script>
-
+// import CartVue from '@/view/Cart.vue';
+// import productDetailVue from './product-detail.vue';
 export default {
-    name: "MainLayout"
+    name: "MainLayout",
+    components: {
+        // CartVue,
+        // productDetailVue
+    },
+    data(){
+        return{
+            isShowCart: false,
+            productsCart: [{product:{id:1, name:"Áo nỉ nam ANHTK311 lalalalalalalaaaaaa - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:2, name:"Áo nỉ nam ANHTK310 - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:3, name:"Áo nỉ nam ANHTK312  - Đen, S", price:559}, quatity: 2, totalPro: 898}, 
+            {product:{id:4, name:"Áo nỉ nam ANHTK314 - Đen, S", price:649}, quatity: 1, totalPro: 1796}, 
+            {product:{id:5, name:"Áo nỉ nam ANHTK315 - Đen, S", price:449}, quatity: 1, totalPro: 2245}],
+            totalMoney: 0,
+            totalQuatity: 0,
+        }
+    },
+    methods:{
+        //Tính tổng tiền của cả giỏ hàng
+        tongTien(){
+            this.totalMoney = 0;
+            this.productsCart.forEach(pro => {
+                this.totalMoney += pro.totalPro;
+            });
+        },
+
+        //Tính tổng số lượng của cả giỏ hàng
+        tongQuatity(){
+            this.totalQuatity = 0;
+            this.productsCart.forEach(pro => {
+                this.totalQuatity += pro.quatity;
+            });
+        },
+
+        // Ẩn/hiện giỏ hàng
+        showCart(isShow){
+            this.isShowCart = isShow;
+        },
+        // Ấn vào button "Xem giỏ hàng" để hiện giỏ hàng
+        btnSeeCart(){
+            this.showCart(true);
+        },
+        // Lấy ra danh sách giỏ hàng
+        getProductsCart(){
+            // axios.get(``)
+            // .then(function (res){
+
+            // })
+        },
+    },
+    created(){
+        this.tongTien();
+        this.tongQuatity();
+    }
 }
 </script>
 

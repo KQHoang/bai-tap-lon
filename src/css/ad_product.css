@@ -191,11 +191,14 @@
     cursor: pointer;
   }
 
-  .id{
-    width: 30%;
+  .firstname{
+    width: 50%;
+  }
+  .lastname{
+    width: 50%;
   }
   .name{
-    width: 70%;
+    width: 100%;
   }
   .material{
     width: 30%;

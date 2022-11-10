@@ -25,10 +25,7 @@
                   <div class="icon t-item-icon item-product"></div>
                     <div class="t-item-title">Danh sách sản phẩm</div>
                 </router-link>
-                <a class="t-menu-item">
-                    <div class="icon t-item-icon item-bill"></div>
-                    <div class="t-item-title">Danh sách đơn hàng</div>
-                </a>
+               
              
             </div>
         </div>

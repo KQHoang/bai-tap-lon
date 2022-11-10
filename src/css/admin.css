@@ -377,13 +377,13 @@ tr:hover td {
     text-align: center;
 }
 .width-id{
-    min-width: 150px;
-    width: 150px;
+    min-width: 50px;
+    width: 50px;
     top: -87px;
 }
 .width-name{
-    min-width: 230px;
-    width: 230px;
+    min-width: 350px;
+    width: 350px;
     top: -87px;
 }
 .width-image{
@@ -404,8 +404,8 @@ tr:hover td {
     text-align: center;
 }
 .width-material{
-    min-width: 150px;
-    width: 150px;
+    min-width: 200px;
+    width: 200px;
     top: -87px;
 }
 .width-quantity{
@@ -420,8 +420,48 @@ tr:hover td {
     top: -87px;
     text-align: center;
 }
-
-
+.width-accountid{
+    min-width: 100px;
+    width: 100px;
+    top: -87px;
+    text-align: center;
+}
+.width-fname{
+    min-width: 50px;
+    width: 50px;
+    top: -87px;
+    text-align: center;
+}
+.width-lname{
+    min-width: 200px;
+    width: 200px;
+    top: -87px;
+    text-align: center;
+}
+.width-phone{
+    min-width: 150px;
+    width: 150px;
+    top: -87px;
+    text-align: center;
+}
+.width-email{
+    min-width: 200px;
+    width: 200px;
+    top: -87px;
+    text-align: center;
+}
+.width-accountid{
+    min-width: 100px;
+    width: 100px;
+    top: -87px;
+    text-align: center;
+}
+.width-address{
+    min-width: 400px;
+    width: 400px;
+    top: -87px;
+    text-align: center;
+}
 .td-btn {
     position: sticky;
     right: 0;

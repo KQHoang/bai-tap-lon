@@ -238,6 +238,9 @@ export default {
 @import url(@/css/flexBox.css);
 @import url(@/css/admin.css);
 @import url(@/css/ad_product.css);
+@import url(@/css/message.css);
+@import url(@/css/loading.css);
+@import url(@/css/dropdown.css);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -252,6 +255,29 @@ export default {
     max-width: 100%;
     padding: 0 !important;
     margin: 0 !important;
+}
+
+/* CSS cho scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;   
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

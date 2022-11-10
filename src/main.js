@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import CartVue from "./view/Cart.vue"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
+
 import VueFontawesome from "font-awesome/css/font-awesome.min.css";
 import MainProduct from './view/MainProduct.vue'
 import MainUser from './view/MainUser.vue'
@@ -15,15 +17,22 @@ const routes = [
     { path: '/mainuser', component: MainUser },
     { path: '/', component: HomeLayout },
     { path: '/login', component: LoginLayout },
+    { path: '/cart', component: CartVue },
     { path: '/detail/:id', component: ProDetail },
-]
 
+]
 const router = createRouter({
+    // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
     history: createWebHistory(),
-    routes,
+    routes, // short for `routes: routes`
 })
+
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 var app = createApp(App)
 app.use(VueFontawesome)
 app.use(router).mount('#app')
+app.use(ElementPlus)
     // createApp(App).mount('#app')
