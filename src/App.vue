@@ -22,6 +22,9 @@ export default {
 @import url(@/css/flexBox.css); */
 @import url(@/css/admin.css);
 @import url(@/css/ad_product.css);
+@import url(@/css/message.css);
+@import url(@/css/loading.css);
+@import url(@/css/dropdown.css);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
