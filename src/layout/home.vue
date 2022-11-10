@@ -271,7 +271,7 @@ export default {
     var me = this;
     await axios
       .get(
-        "http://localhost:3000/products/paging?Filter=&PageIndex=4&PageSize=8"
+        "http://localhost:3000/products/paging?Filter=&PageIndex=5&PageSize=8"
       )
       .then(function (res) {
         me.toppro = res.data.data;
@@ -283,7 +283,7 @@ export default {
       });
     await axios
       .get(
-        "http://localhost:3000/products/paging?Filter=&PageIndex=10&PageSize=4"
+        "http://localhost:3000/products/paging?Filter=&PageIndex=1&PageSize=4"
       )
       .then(function (res) {
         console.log(res);
