@@ -272,55 +272,21 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.breadcrumb-shop {
-    background: #f5f5f5;
+    
+    <style scoped>
+/**Css main content */
+.sigin{
+    height: 294px;
+    overflow: auto;
 }
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
+.required{
+    color: red;
 }
-.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-    border: 1px solid #d3ced2;
-    padding: 20px;
-    margin: 2em 0;
-    text-align: left;
-    border-radius: 5px;
-}
-a:hover, a:focus {
-    color: #6c6c70;
+.button:hover{
+    background-color: #dfdcde;
     text-decoration: none;
-    outline: none;
-}
-a {
-    transition: opacity 150ms linear, color 150ms linear, background 150ms linear;
-}
-a {
-    color: #252a2b;
-    text-decoration: none;
-    outline: none;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-.button {
-    position: relative;
-    display: inline-block;
-    padding: 10px 28px;
-    line-height: normal;
-    border: 1px solid #ffffff;
-    border-radius: 0;
-    text-transform: uppercase;
-    font-size: 12px;
-    text-align: center;
-    letter-spacing: 1px;
-    background-color: transparent;
-    -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    z-index: 1;
-    color: #252a2b;
-    overflow: hidden;
+    background-image: none;
+    color: #515151;
 }
 .button:before {
     position: absolute;
@@ -335,149 +301,30 @@ a {
     -webkit-transform-origin: left center;
     transform-origin: left center;
     z-index: -1;
-}
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
-    font-size: 100%;
-    margin: 0;
-    line-height: 1;
-    cursor: pointer;
-    position: relative;
+}S
+a:hover,
+a:focus {
+    color: #6c6c70;
     text-decoration: none;
-    overflow: visible;
-    padding: 0.618em 1em;
-    font-weight: 700;
-    border-radius: 3px;
-    left: auto;
-    color: #515151;
-    background-color: #ebe9eb;
-    border: 0;
-    display: inline-block;
-    background-image: none;
-    box-shadow: none;
-    text-shadow: none;
+    outline: none;
 }
-.woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
-    float: left;
-    margin-right: 1em;
-    font-size: 14px;
-}
-.woocommerce form .form-row {
-    padding: 3px;
-    margin: 0 0 6px;
-}
-.woocommerce form .show-password-input, .woocommerce-page form .show-password-input {
-    position: absolute;
-    right: 0.7em;
-    top: 0.7em;
-    cursor: pointer;
-}
-.woocommerce form .show-password-input.display-password::after, .woocommerce-page form .show-password-input.display-password::after {
-    color: #585858;
-}
-.woocommerce form .show-password-input::after, .woocommerce-page form .show-password-input::after {
-    font-family: WooCommerce;
-    speak: never;
-    font-weight: 400;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    margin-left: 0.618em;
-    content: "";
-    text-decoration: none;
-}
-.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    outline: 0;
-    line-height: normal;
-}
-.woocommerce form .form-row .input-text, .woocommerce-page form .form-row .input-text {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-}
-#order_comments, .woocommerce input:not([type="radio"]):not([type="checkbox"]), .woocommerce button, .woocommerce select, .woocommerce .button {
-    height: 40px;
-    line-height: 36px;
-    background-color: #f2f2f2;
-    box-shadow: 0 1px 1px rgb(0 0 0 / 13%) inset;
-    font-weight: 400;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    color: #878787;
-    font-size: 13px;
-    max-width: 100%;
-    padding: 0 15px;
-}
-.woocommerce form .show-password-input, .woocommerce-page form .show-password-input {
-    position: absolute;
-    right: 0.7em;
-    top: 0.7em;
-    cursor: pointer;
-}
-input {
-    line-height: normal;
-}
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font: inherit;
-    color: inherit;
-}
-.woocommerce form .form-row {
-    padding: 3px;
-    margin: 0 0 6px;
-}
-.woocommerce form .form-row label {
-    line-height: 2;
-}
-.woocommerce form .form-row label, .woocommerce-page form .form-row label {
-    display: block;
-}
-label {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 700;
-}
-.woocommerce form .form-row-wide, .woocommerce-page form .form-row-wide {
-    clear: both;
-}
-p {
-    margin: 0 0 10px 0;
-    line-height: 21px;
-    font-size: 14px;
-}
-.size-14{
-font-size: 14px!important;
-}
-.woocommerce .col2-set, .woocommerce-page .col2-set {
-    width: 100%;
-}
-.breadcrumb-shop .breadcrumb-arrows {
-    padding: 10px 0;
-    background: transparent;
-    border-radius: 0;
-    margin: 0;
-}
-.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
-    border: 1px solid #d3ced2;
-    padding: 20px;
-    margin: 2em 0;
-    text-align: left;
-    border-radius: 5px;
-}
-h1, h2, h3, h4, h5, h6 {
+a {
     color: #252a2b;
-    margin: 0 0 13px 0;
-    font-weight: 500;
-    line-height: 1.2;
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
-.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
-    float: left;
-    width: 48%;
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.woocommerce form.register {
+  border: 1px solid #d3ced2;
+  padding: 20px;
+  margin: 2em 0;
+  text-align: left;
+  border-radius: 5px;
 }
 .woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
     float: right;

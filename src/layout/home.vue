@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
       <div class="top-seller">
         <div class="title-top-seller title">
           <div class="container-fluid">
@@ -64,14 +64,11 @@
                     <div class="product-img">
                       <picture>
                         <img
-                          :src="
-                            require(`@/assets/images/product-img/${pro.Image}`)
-                          "
-                          alt=""
+                        :src="require(`@/assets/images/product-img/${pro.Image}`)"
+                        alt=""
                         />
                       </picture>
                     </div>
-                    <div class="product-detail clearfix">
                       <div class="box-pro-detail">
                         <h3 class="pro-name">
                             <router-link :to="`/detail/${pro.ProductID}`">
