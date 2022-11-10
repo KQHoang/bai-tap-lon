@@ -47,6 +47,114 @@
                                 </td>
                                 <td class="product-total"><b>{{pro.totalPro}}<sup><u>đ</u></sup></b></td>
                             </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr>
+                            <tr>
+                                <td class="product-delete">
+                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                                <td class="product-img">
+                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
+                                </td>
+                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
+                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
+                                <td class="product-quatity">
+                                    <div class="qty-opt">
+                                        <button class="icon-qty-minus">-</button>
+                                        <input type="text" value="2" class="qty-num">
+                                        <button class="icon-qty-plus">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                            </tr> -->
                         </tbody>
                         <tfoot>
                             <tr>
