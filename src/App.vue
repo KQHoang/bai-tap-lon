@@ -1,20 +1,30 @@
 <template>
-<main-layout/>
+  <div>
+    <!-- <main-layout/> -->
+    <TheAdmin/>
+  </div>
+
 </template>
 
 <script>
-import LayoutMain from '@/layout/main.vue'
-
+// import LayoutMain from '@/layout/main.vue'
+import TheAdmin from '@/layout/TheAdmin.vue'
 export default {
   name: 'App',
   components: {
-    'main-layout': LayoutMain 
+    // 'main-layout': LayoutMain,
+    TheAdmin
   }
 }
 </script>
 <style>
-@import url(@/css/fontAwesome.css);
-@import url(@/css/flexBox.css);
+/* @import url(@/css/fontAwesome.css);
+@import url(@/css/flexBox.css); */
+@import url(@/css/admin.css);
+@import url(@/css/ad_product.css);
+@import url(@/css/message.css);
+@import url(@/css/loading.css);
+@import url(@/css/dropdown.css);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,5 +62,12 @@ export default {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    color: #000000;
+    box-sizing: border-box;
 }
 </style>
