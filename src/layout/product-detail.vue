@@ -50,21 +50,21 @@
                 <div class="carousel-inner">
                   <div class="item active">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/1.png`)"
                       alt="Los Angeles"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                    :src="require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/2.png`)"
                       alt="Chicago"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                    :src="require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/3.png`)"
                       alt="New York"
                     />
                   </div>
@@ -96,7 +96,7 @@
             <h1>{{ this.selectedPro.ProductName }}</h1>
           </div>
           <div class="product-price">
-            <span>399.000<span>₫</span></span>
+            <span>{{this.selectedPrice}}<span>₫</span></span>
           </div>
           <form class="product-colorsize">
             <table cellspacing="0" class="variations">
@@ -293,6 +293,7 @@ export default {
       proID: 0,
       selectedPro: {},
       relatePro:[],
+      selectedPrice:0,
     };
   },
   methods: {
@@ -328,6 +329,11 @@ export default {
       .then(function(res){
         console.log(res);
         me.relatePro=res.data.data;
+      })
+      await axios.get(`http://localhost:3000/prices/${me.proID}`)
+      .then(function(res){
+        console.log(res);
+        me.selectedPrice=res.data[0].ImportPrice;
       })
   },
 };
