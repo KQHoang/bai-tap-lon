@@ -38,14 +38,14 @@
                 <th class="t-checkbox-td">
                   <input class="t-checkbox" type="checkbox" />
                 </th>
-                <th class="width-id">PRODUCTID</th>
-                <th class="width-name">PRODUCTNAME</th>
-                <th class="width-image">IMAGE</th>
+                <th class="width-id">MÃ SẢN PHẨM</th>
+                <th class="width-name">TÊN SẢN PHẨM</th>
+                <th class="width-image">HÌNH ẢNH</th>
                 <!-- <th class="width-des">DESCRIPTION</th> -->
-                <th class="width-catid">CATEGORYID</th>
-                <th class="width-material">MATERIAL</th>
+                <th class="width-catid" title="Mã loại sản phẩm">MÃ LOẠI SP</th>
+                <th class="width-material">CHẤT LIỆU</th>
                 <th class="width-quantity">SỐ LƯỢNG</th>
-                <th class="width-quantity">SUPPLIERID</th>
+                <th class="width-quantity" title="Mã nhà cung cấp">MÃ NCC</th>
                 <th class="width-status"></th>
               </tr>
             </thead>
@@ -351,15 +351,7 @@ export default {
         console.log(error);
       }
     },
-    /**
-     * 
-     */
-    //  btnUpdate(emp){
-    //       this.productSelected = emp;
-    //       this.isShowDialog = true;
-    //       this.editMode = 1;
-    //       this.productDelete = emp;
-    //  }
+    
     /**
      * Khi nhấn vào icon xóa sẽ hiển thị thông báo xóa với thông tin nhân viên tương ứng
      */

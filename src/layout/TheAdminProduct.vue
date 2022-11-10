@@ -8,7 +8,7 @@
       <!-- Header form -->
       <header class="popup-header">
         <div class="popup-title">
-          <div class="title-popup">Thêm mới sản phẩm</div>
+          <div class="title-popup">{{formName}}</div>
         </div>
         <div class="popup-button">
           <el-tooltip content="Giúp">
@@ -32,7 +32,7 @@
               <input type="text" v-model="product.ProductID">
             </div> -->
             <div class="input-box name">
-              <label for="" class="input-label">Tên sản phẩm</label>
+              <label for="" class="input-label required">Tên sản phẩm</label>
               <input type="text" v-model="product.ProductName" />
             </div>
           </div>
@@ -115,6 +115,7 @@
 </style>
 <script>
 import axios from "axios";
+// import { ElMessage } from "element-plus";
 export default {
   data() {
     return {
@@ -123,6 +124,8 @@ export default {
       categorys: [], //mảng loại sản phẩm
       suppliers: [], //mảng nhà cung cấp
       isEdit: 0, //0-thêm mới, 1-sửa
+      formName: "", //tên form khi thay đổi,
+      contentMessage: "", //nội dung thông báo
     };
   },
   props: {
@@ -188,8 +191,16 @@ export default {
     btnSave() {
       try {
         this.send();
+        if (!this.isEdit) this.contentMessage = "Thêm mới thành công!";
+          else {
+            this.contentMessage = "Cập nhật thành công!";
+            this.formName = "Thêm mới sản phẩm";
+            this.isEdit = 0;
+          }
         this.product = {};
+        this.$emit("showReLoad", true);
         this.$emit("closeDialog", false);
+        this.$emit("reFresh", false);
       } catch (error) {
         console.log(error);
       }
@@ -217,6 +228,13 @@ export default {
       .catch(function (res) {
         console.log(res);
       });
+      //Thêm mới
+      if(this.editMode == 0){
+        this.formName = "Thêm mới sản phẩm";
+      }
+      if(this.editMode == 1){
+        this.formName = "Cập nhật sản phẩm";
+      }
   },
 };
 </script>

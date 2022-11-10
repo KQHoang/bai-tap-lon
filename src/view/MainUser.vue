@@ -130,6 +130,8 @@
     <TheAdminAccount
       v-if="isDialogAccount"
       @closeDialog="showDialog"
+      @showReLoad="showReLoad"
+      @reFresh="reFresh"
       :accountSelected="accountSelected"
       :editMode="editMode"
     />
@@ -194,6 +196,9 @@ export default {
   methods: {
     showDialog(isShow) {
       this.isDialogAccount = isShow;
+    },
+    reFresh(isReFresh) {
+      if (isReFresh) setTimeout(() => this.getPaging(), 500);
     },
     btnAddUser() {
       this.showDialog(true);
