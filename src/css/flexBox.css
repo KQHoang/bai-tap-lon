@@ -5,3 +5,11 @@
 .justify-content-center {
     justify-content: center;
 }
+
+li {
+    font-size: 15px!important;
+}
+
+.main-footer {
+    font-size: 14px!important;
+}
