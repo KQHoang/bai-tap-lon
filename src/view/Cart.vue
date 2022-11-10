@@ -26,41 +26,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr v-for="pro in productsCart" :key="pro.product.id">
                                 <td class="product-delete">
                                     <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                                 <td class="product-img">
                                     <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
                                 </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">449.000<sup><u>đ</u></sup></td>
+                                <td class="product-name">
+                                    {{pro.product.name}}
+
+                                </td>
+                                <td class="product-price">{{pro.product.price}}<sup><u>đ</u></sup></td>
                                 <td class="product-quatity">
                                     <div class="qty-opt">
-                                        <button class="icon-qty-min">-</button>
-                                        <input type="text" value="1" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
+                                        <button class="icon-qty-minus" @click="btnMinusQuatity(pro)">-</button>
+                                        <input :value="pro.quatity" @change="quatityPro(pro)" type="text" class="qty-num">
+                                        <button class="icon-qty-plus" @click="btnPlusQuatity(pro)">+</button>
                                     </div>
                                 </td>
-                                <td class="product-total"><b>449.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-min">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
+                                <td class="product-total"><b>{{pro.totalPro}}<sup><u>đ</u></sup></b></td>
                             </tr>
                         </tbody>
                         <tfoot>
@@ -77,11 +62,11 @@
                     <h4>Tổng giỏ hàng</h4>
                     <div class="money-provisional">
                         <span>Tạm tính</span>
-                        <span class="money-num"><b>1.559.000<sup><u>đ</u></sup></b></span>
+                        <span class="money-num"><b>{{moneyProv}}<sup><u>đ</u></sup></b></span>
                     </div>
                     <div class="money-total">
                         <span>Tổng tiền</span>
-                        <span class="money-num"><b>1.559.000<sup><u>đ</u></sup></b></span>
+                        <span class="money-num"><b>{{moneyTotal}}-{{totalQuatity}}<sup><u>đ</u></sup></b></span>
                     </div>
                     <button class="btn-pay">Thanh toán ngay</button>
                 </div>
@@ -91,7 +76,76 @@
 </template>
 <script>
 export default {
-    name: "CartLayout"
+    name: "CartLayout",
+    components: {
+    },
+    data(){
+        return{
+            productsCart: [{product:{id:1, name:"Áo nỉ nam ANHTK311 lalalalalalalaaaaaa - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:2, name:"Áo nỉ nam ANHTK310 - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:3, name:"Áo nỉ nam ANHTK312  - Đen, S", price:559}, quatity: 2, totalPro: 898}, 
+            {product:{id:4, name:"Áo nỉ nam ANHTK314 - Đen, S", price:649}, quatity: 1, totalPro: 1796}, 
+            {product:{id:5, name:"Áo nỉ nam ANHTK315 - Đen, S", price:449}, quatity: 1, totalPro: 2245}],
+            totalQuatity: 0,
+            moneyProv: 0,
+            moneyTotal: 0,
+        }
+    },
+    methods: {
+        // Đọc tất cả số lượng sản phẩm
+        totalQty(){
+            this.totalQuatity = 0;
+            this.productsCart.forEach(pro => {
+                this.totalQuatity += pro.quatity;
+            });
+        },
+        // Tính số tất cả tổng tiền
+        totalMoney(){
+            this.moneyProv = 0;
+            this.moneyTotal = 0;
+            this.productsCart.forEach(pro => {
+                this.moneyProv += pro.totalPro;
+            });
+            this.moneyTotal = this.moneyProv;
+        },
+        //Click vào nút - để giảm số sp
+        btnMinusQuatity(pro){
+            try {
+                if(pro.quatity == 1){
+                    alert("Bạn có muốn xóa sp ko?");
+                }
+                else {
+                    pro.quatity -= 1;
+                    pro.totalPro = pro.quatity * pro.product.price;
+                    this.totalMoney();
+                    this.totalQty();
+                }    
+            } catch (error) {
+                console.log(error);
+                alert(error);
+            }   
+        },
+        //Click vào nút + để tăng số sp
+        btnPlusQuatity(pro){
+            try {
+                pro.quatity += 1;
+                pro.totalPro = pro.quatity * pro.product.price;
+                this.totalMoney();
+                this.totalQty();
+            } catch (error) {
+                console.log(error);
+                alert(error);
+            } 
+        },
+        //Thay doi so luong sp
+        quatityPro(pro){
+            pro.totalPro = pro.quatity * pro.product.price;
+        }
+    },
+    created(){
+        this.totalQty();
+        this.totalMoney();
+    }
 }
 </script>
 <style scoped>
@@ -136,26 +190,73 @@ export default {
 .cart-big-content .cart-show{
     
 }
-.cart-show .cart-table{
-    width: 100%;
+.cart-show table.cart-table{
     border: 1px solid rgba(0,0,0,.1);
     text-align: left;
     border-collapse: separate;
     border-radius: 5px;
+    table-layout: fixed;
 }
 
-.cart-show table.cart-table th {
+.cart-show .cart-table .product-delete{
+    width: 5%;
+}
+
+.cart-show .cart-table .product-img{
+    width: 15%;
+}
+.cart-show .cart-table .product-name{
+    width: 35%;
+}
+.cart-show .cart-table .product-price{
+    width: 15%;
+}
+.cart-show .cart-table .product-quatity{
+    width: 15%;
+}
+.cart-show .cart-table .product-total{
+    width: 15%;
+}
+.cart-show table.cart-table thead {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.cart-show table.cart-table tfoot{
+    display: table;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 9px 12px;
+}
+table.cart-table thead tr th {
     font-weight: 700;
     padding: 9px 12px;
     line-height: 1.5em;
 }
-.cart-show table.cart-table td {
+.cart-show table.cart-table tbody {
+    min-height: 100px;
+    max-height: 360px;
+    overflow: auto;
+    display: block;
+    width: 100%;
+} 
+
+.cart-show table.cart-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
     border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.cart-show table.cart-table tbody tr td{
     padding: 9px 12px;
     vertical-align: middle;
     line-height: 1.5em;
 }
 
+.cart-show table.cart-table tbody tr:first-child {
+    border-top: none;
+}
 .cart-table td.product-delete a{
     color: #252a2b;
 }
@@ -186,20 +287,20 @@ export default {
 .cart-table td.product-quatity .qty-opt>input:focus{
     border: 1px solid #222;
 }
-.qty-opt .icon-qty-min{
+.qty-opt .icon-qty-minus{
     border-radius: 100px 0 0 100px;
 }
 .qty-opt .icon-qty-plus{
     border-radius: 0 100px 100px 0;
 }
-.qty-opt .icon-qty-min, .icon-qty-plus{
+.qty-opt .icon-qty-minus, .icon-qty-plus{
     width: 25px;
     height: 28px;
     background: #fff;
     border: none;
     border: 1px solid #e6e6e6;
 } 
-.qty-opt .icon-qty-min:hover, .icon-qty-plus:hover{
+.qty-opt .icon-qty-minus:hover, .icon-qty-plus:hover{
     border: 1px solid #222;
     cursor: pointer;
 } 
@@ -253,6 +354,4 @@ export default {
 .cart-money .btn-pay:hover{
     background-color: #666;
 }
-
-
 </style>

@@ -19,7 +19,7 @@
                     <i class="fa fa-search fa-xl" aria-hidden="true"></i>
                     <div class="header-cart-wap">
                         <i class="fa fa-shopping-bag fa-xl" aria-hidden="true"></i>
-                        <span class="header-cart-notice">3</span>
+                        <span class="header-cart-notice">{{totalQuatity}}</span>
                         <!-- Không có sản phẩm: thêm class header-cart-list-nopro -->
                         <div class="header-cart-list">
                             <div class="title-nocart">
@@ -27,40 +27,20 @@
                             </div>
                             <div class="cart-list-product">
                                 <div class="show-product">
-                                    <div class="cart-product">
+                                    <div v-for="pro in productsCart" :key="pro.product.id" class="cart-product">
                                         <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
                                         <div class="info-product">
-                                            <div class="info-pro-name">Áo nỉ nam ANHTK311 - Đen, S</div>
-                                            <div class="info-pro-money"><b>449.000<sup><u>đ</u></sup></b> x 1</div>
+                                            <div class="info-pro-name">{{pro.product.name}}</div>
+                                            <div class="info-pro-money"><b>{{pro.product.price}}<sup><u>đ</u></sup></b> x {{pro.quatity}}</div>
                                         </div>
                                         <div class="cart-pro-delete">
-                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                            <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                         </div>
-                                    </div>   
-                                    <div class="cart-product">
-                                        <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
-                                        <div class="info-product">
-                                            <div class="info-pro-name">Áo nỉ nam ANHTK311 - Đen, S</div>
-                                            <div class="info-pro-money"><b>449.000<sup><u>đ</u></sup></b> x 1</div>
-                                        </div>
-                                        <div class="cart-pro-delete">
-                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>   
-                                    <div class="cart-product">
-                                        <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="lỗi ảnh">
-                                        <div class="info-product">
-                                            <div class="info-pro-name">Áo nỉ nam ANHTK311 - Đen, S</div>
-                                            <div class="info-pro-money"><b>449.000<sup><u>đ</u></sup></b> x 1</div>
-                                        </div>
-                                        <div class="cart-pro-delete">
-                                            <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>    
+                                    </div> 
                                 </div>
                                 <div class="total-money">
                                     <span>Tổng tiền: </span>
-                                    <span class="total-money-num"><b>449.000<sup><u>đ</u></sup></b></span>
+                                    <span class="total-money-num"><b>{{totalMoney}}<sup><u>đ</u></sup></b></span>
                                 </div>
                             </div>
                             <button class="btn-see-cart" @click="btnSeeCart">Xem giỏ hàng</button>
@@ -105,7 +85,9 @@
             </div>
         </div>
     </div>
-    <CartVue v-if="isShowCart"/>
+    <CartVue v-if="isShowCart"
+    :productsCart = "productsCart"/>
+    <productDetailVue/>
     <div class="main-footer w-100">
         <div class="top-footer">
             <div class="container-fluid row">
@@ -219,17 +201,42 @@
 
 <script>
 import CartVue from '@/view/Cart.vue';
+import productDetailVue from './product-detail.vue';
 export default {
     name: "MainLayout",
     components: {
-        CartVue
+        CartVue,
+        productDetailVue
     },
     data(){
         return{
             isShowCart: false,
+            productsCart: [{product:{id:1, name:"Áo nỉ nam ANHTK311 lalalalalalalaaaaaa - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:2, name:"Áo nỉ nam ANHTK310 - Đen, S", price:449}, quatity: 1, totalPro: 449}, 
+            {product:{id:3, name:"Áo nỉ nam ANHTK312  - Đen, S", price:559}, quatity: 2, totalPro: 898}, 
+            {product:{id:4, name:"Áo nỉ nam ANHTK314 - Đen, S", price:649}, quatity: 1, totalPro: 1796}, 
+            {product:{id:5, name:"Áo nỉ nam ANHTK315 - Đen, S", price:449}, quatity: 1, totalPro: 2245}],
+            totalMoney: 0,
+            totalQuatity: 0,
         }
     },
     methods:{
+        //Tính tổng tiền của cả giỏ hàng
+        tongTien(){
+            this.totalMoney = 0;
+            this.productsCart.forEach(pro => {
+                this.totalMoney += pro.totalPro;
+            });
+        },
+
+        //Tính tổng số lượng của cả giỏ hàng
+        tongQuatity(){
+            this.totalQuatity = 0;
+            this.productsCart.forEach(pro => {
+                this.totalQuatity += pro.quatity;
+            });
+        },
+
         // Ẩn/hiện giỏ hàng
         showCart(isShow){
             this.isShowCart = isShow;
@@ -237,7 +244,18 @@ export default {
         // Ấn vào button "Xem giỏ hàng" để hiện giỏ hàng
         btnSeeCart(){
             this.showCart(true);
-        }
+        },
+        // Lấy ra danh sách giỏ hàng
+        getProductsCart(){
+            // axios.get(``)
+            // .then(function (res){
+
+            // })
+        },
+    },
+    created(){
+        this.tongTien();
+        this.tongQuatity();
     }
 }
 </script>
@@ -349,7 +367,7 @@ export default {
 .header-wap-icon{
     justify-content: end;
 }
-
+/* CSS cho giỏ hàng bên phải */
 /* Header-cart */
 .header-wap-icon .header-cart-wap{
     position: relative;
@@ -380,6 +398,12 @@ export default {
 .header-cart-list .cart-list-product{
     padding-bottom: 20px;
 }
+.cart-list-product .show-product{
+    min-height: 50px;
+    max-height: 360px;
+    overflow: auto;
+}
+
 .show-product .cart-product{
     display: flex;
     justify-content: space-between;
@@ -388,16 +412,22 @@ export default {
 .cart-product>img{
     width: 100px;
 }
+.cart-product .info-product{
+    padding: 0 10px;
+    text-align: left;
+}
 .cart-product .info-product .info-pro-name{
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 .info-product .cart-pro-delete .fa{
     margin-top: 0 !important;
 }
-.cart-product .cart-pro-delete a{
+.cart-product .cart-pro-delete>button{
     color: #252a2b;
+    border: none;
+    background: none;
 }
-.cart-product .cart-pro-delete a:hover{
+.cart-product .cart-pro-delete>button:hover{
     color: red;
 }
 
@@ -431,7 +461,8 @@ export default {
 .header-cart-list .btn-see-cart:hover{
     background-color: #666;
 }
-/* Kết thúc */
+/* Kết thúc css giỏ hàng góc bên phải */
+
 .header-wap-icon .fa{
     margin: 8px 5px 0;
     cursor: pointer;
