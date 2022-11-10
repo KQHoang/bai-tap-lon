@@ -6,10 +6,16 @@ import "bootstrap"
 import VueFontawesome from "font-awesome/css/font-awesome.min.css";
 import MainProduct from './view/MainProduct.vue'
 import MainUser from './view/MainUser.vue'
+import HomeLayout from './layout/home.vue'
+import LoginLayout from './layout/main.vue'
+import ProDetail from './layout/product-detail.vue'
 
 const routes = [
-    {path: '/mainproduct', component: MainProduct},
-    {path: '/mainuser', component: MainUser}
+    { path: '/mainproduct', component: MainProduct },
+    { path: '/mainuser', component: MainUser },
+    { path: '/', component: HomeLayout },
+    { path: '/login', component: LoginLayout },
+    { path: '/detail/:id', component: ProDetail },
 ]
 
 const router = createRouter({
