@@ -268,6 +268,7 @@ export default {
   },
   computed: {},
   async created() {
+    // var aka=this.$route.params.kt;
     var me = this;
     await axios
       .get(

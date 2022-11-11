@@ -264,8 +264,8 @@ export default {
       totalMoney: 0,
       totalQuatity: 0,
       accountSU: {
-        FirstName: "",
         LastName: "",
+        FirstName: "",
         PhoneNumber: "",
         Email: "",
         Password: "",
@@ -276,7 +276,7 @@ export default {
         Password: "",
       },
       accountUpdate: [],
-      kt:0,
+      kt: 0,
     };
   },
   methods: {
@@ -295,16 +295,18 @@ export default {
             this.accountSI.Email == element.Email &&
             this.accountSI.Password == element.Password
           ) {
-            this.kt=1;
+            this.kt = 1;
             console.log(element.Email);
             console.log(this.kt);
-            }
+          }
         });
-      }
+      } else return;
       console.log(this.kt);
-      if(this.kt==1) alert("Đăng nhập thành công!");
-      else alert("Tài khoản hoặc mật khẩu không đúng!");
-      this.kt=0;
+      if (this.kt == 1) {
+        alert("Đăng nhập thành công!");
+        this.$router.push({path:'/home',params:{param1:'Hello'}});
+      } else alert("Tài khoản hoặc mật khẩu không đúng!");
+      this.kt = 0;
     },
     //Validate đăng ký
     validateSignUp() {
@@ -340,6 +342,8 @@ export default {
           .then(function (res) {
             console.log(res);
             me.accountSU = {};
+            alert("Đăng ký thành công!");
+            window.location.reload();
           })
           .catch(function (res) {
             console.log(res);
