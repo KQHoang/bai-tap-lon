@@ -50,21 +50,27 @@
                 <div class="carousel-inner">
                   <div class="item active">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/1.png`)
+                      "
                       alt="Los Angeles"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/2.png`)
+                      "
                       alt="Chicago"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/3.png`)
+                      "
                       alt="New York"
                     />
                   </div>
@@ -96,7 +102,7 @@
             <h1>{{ this.selectedPro.ProductName }}</h1>
           </div>
           <div class="product-price">
-            <span>399.000<span>₫</span></span>
+            <span>{{ this.selectedPrice }}<span>₫</span></span>
           </div>
           <form class="product-colorsize">
             <table cellspacing="0" class="variations">
@@ -106,43 +112,14 @@
                     <label for="">Màu sắc</label>
                   </td>
                   <td class="value">
-                    <div class="select swatch-control">
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-19.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-3.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-9.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
+                    <div class="tawcvs-swatches">
+                      <span class="swatch swatch-label swatch-m">Trắng</span>
+                    </div>
+                    <div class="tawcvs-swatches">
+                      <span class="swatch swatch-label swatch-m">Be</span>
+                    </div>
+                    <div class="tawcvs-swatches">
+                      <span class="swatch swatch-label swatch-m">Rêu xanh</span>
                     </div>
                   </td>
                 </tr>
@@ -247,33 +224,39 @@
           <div class="container-fluid">
             <div class="row-content">
               <div class="product-list clearfix flex wrap">
-                <div class="col-md-3 pro-loop"
-                v-for="sl in relatePro"
-                :key="sl.ProductID"
+                <div
+                  class="col-md-3 pro-loop"
+                  v-for="sl in relatePro"
+                  :key="sl.ProductID"
                 >
-                    <div class="product-block">
-                      <div class="product-img">
-                        <picture>
-                          <img
-                            src="../assets/images/product-img/STDTK341-QJDTK310-3-400x600.jpg"
-                            alt=""
-                          />
-                        </picture>
-                      </div>
-                      <div class="product-detail clearfix">
-                        <div class="box-pro-detail">
-                          <h3 class="pro-name">
-                            <a href="">{{sl.ProductName}}</a>
-                          </h3>
-                          <div class="box-pro-prices">
-                            <p class="pro-price highlight">
-                              <span>399.000₫</span>
-                            </p>
-                          </div>
+                  <div class="product-block">
+                    <div class="product-img">
+                      <picture>
+                        <img
+                          :src="
+                            require(`@/assets/images/product-img/${sl.Image}`)
+                          "
+                          alt=""
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-detail clearfix">
+                      <div class="box-pro-detail">
+                        <h3 class="pro-name">
+                          <router-link :to="`/detail/${sl.ProductID}`">
+                                <a href="">{{ sl.ProductName }}</a>
+                            </router-link>
+                          
+                        </h3>
+                        <div class="box-pro-prices">
+                          <p class="pro-price highlight">
+                            <span>399.000₫</span>
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -292,13 +275,14 @@ export default {
       soluong: 1,
       proID: 0,
       selectedPro: {},
-      relatePro:[],
       orderPro:{},      
       productSelect:{},   // sản phẩm hiện tại của trang
       listProCart:[], // mảng lưu danh sách sản phẩm trong giỏ hàng
       orderID: 0,
       orders:[], // mảng lưu thông tin các order
       orderLast:{}, // phần tử cuối cùng trong mảng orders
+      relatePro: [],
+      selectedPrice: 0,
     };
   },
   methods: {
@@ -383,11 +367,20 @@ export default {
       .then(function (res) {
         console.log(res);
       });
-      await axios.get("http://localhost:3000/products/paging?Filter=&PageIndex=12&PageSize=4")
-      .then(function(res){
+    await axios
+      .get(
+        "http://localhost:3000/products/paging?Filter=&PageIndex=12&PageSize=4"
+      )
+      .then(function (res) {
         console.log(res);
-        me.relatePro=res.data.data;
-      })
+        me.relatePro = res.data.data;
+      });
+    await axios
+      .get(`http://localhost:3000/prices/${me.proID}`)
+      .then(function (res) {
+        console.log(res);
+        me.selectedPrice = res.data[0].ImportPrice;
+      });
   },
 };
 </script>
@@ -502,7 +495,10 @@ table tr th {
   text-align: left;
 }
 table tr td {
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #dddddd!important;
+}
+tr:hover td{
+  background: none!important;
 }
 td,
 th {

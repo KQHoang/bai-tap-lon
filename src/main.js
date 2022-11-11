@@ -15,7 +15,7 @@ import Cart from './layout/cart.vue'
 const routes = [
     { path: '/mainproduct', component: MainProduct },
     { path: '/mainuser', component: MainUser },
-    { path: '/', component: HomeLayout },
+    { path: '/home', component: HomeLayout },
     { path: '/login', component: LoginLayout },
     { path: '/detail/:id/:orderid', component: ProDetail },
     { path: '/shopcart', component: Cart },
