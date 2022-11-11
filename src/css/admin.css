@@ -409,9 +409,10 @@ td {
     justify-content: flex-end !important;
 }
 
-tr:hover td {
+
+/* tr:hover td {
     background-color: #f2f9ff!important;
-}
+} */
 
 .t-dropdown {
     display: flex;
@@ -629,10 +630,6 @@ tr:hover td {
 
 tr:hover .block-delete {
     display: block;
-}
-
-tr:hover td {
-    background-color: #dbf8ff !important;
 }
 
 tr:hover .input-add-user {
