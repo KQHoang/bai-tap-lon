@@ -260,7 +260,8 @@ export default {
         "476.3993",
         "312.8489",
       ],
-      priceNew:["129.000","150.000","169.500","105.200"]
+      priceNew:["129.000","150.000","169.500","105.200"],
+      logined:false,
     };
   },
   methods: {
@@ -268,7 +269,11 @@ export default {
   },
   computed: {},
   async created() {
-    // var aka=this.$route.params.kt;
+    var test=this.$route.query.test;
+    if(test=="test"){
+      this.logined=true;
+    }
+    console.log(test);
     var me = this;
     await axios
       .get(
