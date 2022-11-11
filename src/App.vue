@@ -23,10 +23,10 @@
             </router-link>
             <i class="fa fa-search fa-xl" aria-hidden="true"></i>
             <div class="header-cart-wap">
-              <router-link to="/shopping">
+              <router-link to="/shopcart">
                 <i class="fa fa-shopping-bag fa-xl" aria-hidden="true"></i>
               </router-link>
-              <span class="header-cart-notice">{{totalQuatity}}</span>
+              <!-- <span class="header-cart-notice">6</span> -->
               <!-- Không có sản phẩm: thêm class header-cart-list-nopro -->
               <div class="header-cart-list">
                 <div class="title-nocart">
@@ -43,14 +43,17 @@
                       <div class="cart-pro-delete">
                         <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                       </div>
-                    </div> 
+                    </div>
                   </div>
                   <div class="total-money">
                     <span>Tổng tiền: </span>
                     <span class="total-money-num"><b>{{totalMoney}}<sup><u>đ</u></sup></b></span>
                   </div>
                 </div>
-                <button class="btn-see-cart" @click="btnSeeCart">Xem giỏ hàng</button>
+                <router-link to="/shopcart">
+                  <button class="btn-see-cart" @click="btnSeeCart">Xem giỏ hàng</button>
+                </router-link>
+                
               </div>
             </div>
           </div>
@@ -250,12 +253,32 @@
 // import LayoutMain from '@/layout/main.vue'
 // import HomeLayout from '@/layout/home.vue'
 // import TheAdmin from '@/layout/TheAdmin.vue'
+import axios from "axios";
 export default {
   name: 'App',
   components: {
     // 'main-layout': LayoutMain,
     // 'home-layout': HomeLayout,
     
+  },
+  data(){
+    return{      
+      productsCart:[],
+      totalMoney: 0,
+    }
+  },
+  methods: {
+    
+    // Tính số tất cả tổng tiền
+    tongtien(){
+      this.totalMoney = 0;
+      this.productsCart.forEach(pro => {
+        this.moneyProv += pro.totalPro;
+      });
+    },
+  },
+  async created(){
+    this.tongtien();
   }
 }
 </script>
@@ -435,9 +458,10 @@ body{
     width: 400px;
     border-radius: 2px;
     box-shadow: 0 2px 10px #ccc;
-    z-index: 3;
+    z-index: 1000;
     display: none;
     padding: 30px 20px;
+    font-size: 16px;
 }
 .header-cart-wap:hover .header-cart-list{
     display: block;

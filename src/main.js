@@ -10,14 +10,15 @@ import MainUser from './view/MainUser.vue'
 import HomeLayout from './layout/home.vue'
 import LoginLayout from './layout/main.vue'
 import ProDetail from './layout/product-detail.vue'
+import Cart from './layout/cart.vue'
 
 const routes = [
     { path: '/mainproduct', component: MainProduct },
     { path: '/mainuser', component: MainUser },
     { path: '/', component: HomeLayout },
     { path: '/login', component: LoginLayout },
-    { path: '/detail/:id', component: ProDetail },
-
+    { path: '/detail/:id/:orderid', component: ProDetail },
+    { path: '/shopcart', component: Cart },
 ]
 const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.

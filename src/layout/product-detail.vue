@@ -201,7 +201,7 @@
             <button
               class="button dark btn-addtocart"
               type="submit"
-              @click="test"
+              @click="btnAddToCart"
             >
               <i class="fa fa-shopping-cart"> Thêm vào giỏ Hàng </i>
             </button>
@@ -293,6 +293,12 @@ export default {
       proID: 0,
       selectedPro: {},
       relatePro:[],
+      orderPro:{},      
+      productSelect:{},   // sản phẩm hiện tại của trang
+      listProCart:[], // mảng lưu danh sách sản phẩm trong giỏ hàng
+      orderID: 0,
+      orders:[], // mảng lưu thông tin các order
+      orderLast:{}, // phần tử cuối cùng trong mảng orders
     };
   },
   methods: {
@@ -303,6 +309,59 @@ export default {
       if (this.soluong == 1) return;
       else this.soluong -= 1;
     },
+    
+    //Thêm vào giỏ hàng
+    async btnAddToCart(){
+      var me = this;
+      me.orderPro.AccountID = 8;
+      me.orderPro.PaymentID = 1;
+      me.orderPro.Status = 0;
+      me.orderPro.PaymentStatus = 0;
+      await axios.post(`http://localhost:3000/orders`,me.orderPro)
+      .then(function(res){
+        console.log(res);
+      })
+      .catch(function(res) {   
+        console.log(res);         
+      })
+      // Lấy ra orderID cuối cùng
+      await axios.get(`http://localhost:3000/orders`)
+      .then(function(res){        
+        me.orders = res.data;
+        console.log(me.orders);
+        me.orderLast = me.orders.reverse()[0];        
+        me.orderID = me.orderLast.OrderID;
+        console.log(me.orderID);
+      })
+      .catch(function(res) {   
+        console.log(res);         
+      })
+      console.log(me.productSelect.OrderID);
+      console.log(me.orderID);
+      await setTimeout(() => {
+        me.productSelect.OrderID = me.orderID;
+        console.log(me.productSelect.OrderID);
+
+        me.productSelect.ProductID = parseInt(me.$route.params.id);
+        console.log(me.productSelect.ProductID);
+
+        me.productSelect.Quatity = me.soluong;
+        console.log(me.productSelect.Quatity);
+
+        me.productSelect.Status = 0;
+        console.log(me.productSelect.Status);
+        
+        console.log(me.productSelect);
+
+        axios.post(`http://localhost:3000/orderdetails`, me.productSelect)
+        .then(function(res){
+          console.log(res);
+        })
+        .catch(function(res) {   
+          console.log(res);         
+        });   
+      }, 0.1);
+    }    
   },
   async created() {
     this.proID = this.$route.params.id;

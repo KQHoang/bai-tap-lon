@@ -20,15 +20,15 @@
                                 <th class="product-delete">&nbsp;</th>
                                 <th class="product-img">&nbsp;</th>
                                 <th class="product-name">Sản phẩm</th>
-                                <th class="product-price">Giá</th>
-                                <th class="product-quatity">Số lượng</th>
-                                <th class="product-total">Tạm tính</th>
+                                <th class="product-price aligh-center">Giá</th>
+                                <th class="product-quatity aligh-center">Số lượng</th>
+                                <th class="product-total aligh-center">Tạm tính</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="pro in productsCart" :key="pro.product.id">
                                 <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                                 <td class="product-img">
                                     <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
@@ -37,124 +37,16 @@
                                     {{pro.product.name}}
 
                                 </td>
-                                <td class="product-price">{{pro.product.price}}<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
+                                <td class="product-price aligh-center">{{pro.product.price}}<sup><u>đ</u></sup></td>
+                                <td class="product-quatity aligh-center">
                                     <div class="qty-opt">
                                         <button class="icon-qty-minus" @click="btnMinusQuatity(pro)">-</button>
                                         <input :value="pro.quatity" @change="quatityPro(pro)" type="text" class="qty-num">
                                         <button class="icon-qty-plus" @click="btnPlusQuatity(pro)">+</button>
                                     </div>
                                 </td>
-                                <td class="product-total"><b>{{pro.totalPro}}<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr>
-                            <tr>
-                                <td class="product-delete">
-                                    <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                                <td class="product-img">
-                                    <img src="https://360boutique.vn/wp-content/uploads/2022/10/ANHTK311-QKLTK308-2-600x600.jpg" alt="Lỗi ảnh">
-                                </td>
-                                <td class="product-name">Áo nỉ nam ANHTK311 - Đen, S</td>
-                                <td class="product-price">555.000<sup><u>đ</u></sup></td>
-                                <td class="product-quatity">
-                                    <div class="qty-opt">
-                                        <button class="icon-qty-minus">-</button>
-                                        <input type="text" value="2" class="qty-num">
-                                        <button class="icon-qty-plus">+</button>
-                                    </div>
-                                </td>
-                                <td class="product-total"><b>1.110.000<sup><u>đ</u></sup></b></td>
-                            </tr> -->
+                                <td class="product-total aligh-center"><b>{{pro.totalPro}}<sup><u>đ</u></sup></b></td>
+                            </tr>                            
                         </tbody>
                         <tfoot>
                             <tr>
@@ -167,7 +59,7 @@
                     </table>
                 </div>
                 <div class="cart-money col-md-4">
-                    <h4>Tổng giỏ hàng</h4>
+                    <h4 class="cart-show-title">Tổng giỏ hàng</h4>
                     <div class="money-provisional">
                         <span>Tạm tính</span>
                         <span class="money-num"><b>{{moneyProv}}<sup><u>đ</u></sup></b></span>
@@ -259,6 +151,7 @@ export default {
 <style scoped>
 .site-cart-big{  
     text-align: left;
+    font-size: 14px;
 }
 .cart-big-container{    
     padding-right: 15px;
@@ -267,12 +160,13 @@ export default {
     margin-right: auto;
     margin-left: auto;
 }
-.cart-big-header{
-    background: #f5f5f5;
+.cart-big-container .cart-big-header{
+    
     margin-right: -15px;
     margin-left: -15px;
 }
 .cart-big-header ol{
+    background: #f5f5f5;
     padding: 10px 15px !important;
     
 }
@@ -280,7 +174,7 @@ export default {
     background: transparent;
 }
 .cart-big-title li{
-    font-size: 13px;
+    font-size: 13px !important;
 }
 .cart-big-title>li{
     display: inline-block;
@@ -291,12 +185,17 @@ export default {
     outline: none;
 }
 .cart-big-content{
+    align-items: normal;
     padding-left: 15px !important;
     padding-right: 15px !important;
     margin-bottom: 30px;
+    padding-top: 15px;
 }
 .cart-big-content .cart-show{
     
+}
+.cart-big-content .cart-show-title{
+    font-size: 24px;
 }
 .cart-show table.cart-table{
     border: 1px solid rgba(0,0,0,.1);
@@ -304,6 +203,11 @@ export default {
     border-collapse: separate;
     border-radius: 5px;
     table-layout: fixed;
+    /* text-align: center; */
+}
+
+.cart-table .aligh-center{
+    text-align: center;
 }
 
 .cart-show .cart-table .product-delete{
@@ -362,13 +266,19 @@ table.cart-table thead tr th {
     line-height: 1.5em;
 }
 
+.cart-show table.cart-table tbody tr td{
+    border-right: none;
+}
+
 .cart-show table.cart-table tbody tr:first-child {
     border-top: none;
 }
-.cart-table td.product-delete a{
+.cart-table td.product-delete>button{
     color: #252a2b;
+    border: none;
+    background: none;
 }
-.cart-table td.product-delete a:hover{
+.cart-table td.product-delete>button:hover{
     color: red;
 }
 .cart-table td.product-img img{
