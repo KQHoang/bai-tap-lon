@@ -50,21 +50,27 @@
                 <div class="carousel-inner">
                   <div class="item active">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/1.png`)
+                      "
                       alt="Los Angeles"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/2.png`)
+                      "
                       alt="Chicago"
                     />
                   </div>
 
                   <div class="item">
                     <img
-                      src="../assets/images/product-img/img1.png"
+                      :src="
+                        require(`@/assets/images/product-detail/${this.selectedPro.ProductID}/3.png`)
+                      "
                       alt="New York"
                     />
                   </div>
@@ -96,7 +102,7 @@
             <h1>{{ this.selectedPro.ProductName }}</h1>
           </div>
           <div class="product-price">
-            <span>399.000<span>₫</span></span>
+            <span>{{ this.selectedPrice }}<span>₫</span></span>
           </div>
           <form class="product-colorsize">
             <table cellspacing="0" class="variations">
@@ -106,44 +112,12 @@
                     <label for="">Màu sắc</label>
                   </td>
                   <td class="value">
-                    <div class="select swatch-control">
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-19.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-3.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
-                      <div class="select-option swatch-wrapper">
-                        <a
-                          href=""
-                          style="width: 100px; height: 100px"
-                          class="swatch-anchor"
-                        >
-                          <img
-                            src="../assets/images/product-color/STDTK341-QJDTK310-9.jpg"
-                            alt=""
-                            class="h-60"
-                        /></a>
-                      </div>
+                    <div class="tawcvs-swatches"
+                    v-for="(c,index) in colorPro"
+                    :key="index">
+                      <span class="swatch swatch-label swatch-m">{{convertColor(colorPro[index].Color)}}</span>
                     </div>
+                    
                   </td>
                 </tr>
                 <tr>
@@ -151,14 +125,11 @@
                     <label for="">Kích thước</label>
                   </td>
                   <td class="value">
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">M</span>
-                    </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">L</span>
-                    </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">XL</span>
+                    <div class="tawcvs-swatches"
+                    v-for="(s,index) in sizePro"
+                    :key="index"
+                    >
+                      <span class="swatch swatch-label swatch-m">{{convertSize(sizePro[index].Size)}}</span>
                     </div>
                   </td>
                 </tr>
@@ -247,33 +218,39 @@
           <div class="container-fluid">
             <div class="row-content">
               <div class="product-list clearfix flex wrap">
-                <div class="col-md-3 pro-loop"
-                v-for="sl in relatePro"
-                :key="sl.ProductID"
+                <div
+                  class="col-md-3 pro-loop"
+                  v-for="sl in relatePro"
+                  :key="sl.ProductID"
                 >
-                    <div class="product-block">
-                      <div class="product-img">
-                        <picture>
-                          <img
-                            src="../assets/images/product-img/STDTK341-QJDTK310-3-400x600.jpg"
-                            alt=""
-                          />
-                        </picture>
-                      </div>
-                      <div class="product-detail clearfix">
-                        <div class="box-pro-detail">
-                          <h3 class="pro-name">
-                            <a href="">{{sl.ProductName}}</a>
-                          </h3>
-                          <div class="box-pro-prices">
-                            <p class="pro-price highlight">
-                              <span>399.000₫</span>
-                            </p>
-                          </div>
+                  <div class="product-block">
+                    <div class="product-img">
+                      <picture>
+                        <img
+                          :src="
+                            require(`@/assets/images/product-img/${sl.Image}`)
+                          "
+                          alt=""
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-detail clearfix">
+                      <div class="box-pro-detail">
+                        <h3 class="pro-name">
+                          <router-link :to="`/detail/${sl.ProductID}`">
+                                <a href="">{{ sl.ProductName }}</a>
+                            </router-link>
+                          
+                        </h3>
+                        <div class="box-pro-prices">
+                          <p class="pro-price highlight">
+                            <span>399.000₫</span>
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -292,10 +269,28 @@ export default {
       soluong: 1,
       proID: 0,
       selectedPro: {},
-      relatePro:[],
+      relatePro: [],
+      selectedPrice: 0,
+      colorPro:[],
+      sizePro:[],
     };
   },
   methods: {
+    convertSize(size){
+      if(size==0) return "S";
+      if(size==1) return "M";
+      if(size==2) return "L";
+      if(size==3) return "XL";
+    },
+    convertColor(color){
+      if(color==0) return "Trắng";
+      if(color==1) return "Đen";
+      if(color==2) return "Xanh Navy";
+      if(color==3) return "Xám";
+      if(color==4) return "Be";
+      if(color==5) return "Xanh nhạt";
+      if(color==6) return "Vàng";
+    },
     incPro() {
       this.soluong += 1;
     },
@@ -306,6 +301,7 @@ export default {
   },
   async created() {
     this.proID = this.$route.params.id;
+    
     console.log(this.proID);
     var me = this;
     await axios
@@ -318,17 +314,30 @@ export default {
       .get(`http://localhost:3000/productColors/${me.proID}`)
       .then(function (res) {
         console.log(res);
+        me.colorPro=res.data;
+        console.log(me.colorPro);
       });
     await axios
       .get(`http://localhost:3000/productSizes/${me.proID}`)
       .then(function (res) {
         console.log(res);
+        me.sizePro=res.data;
       });
-      await axios.get("http://localhost:3000/products/paging?Filter=&PageIndex=12&PageSize=4")
-      .then(function(res){
+    await axios
+      .get(
+        "http://localhost:3000/products/paging?Filter=&PageIndex=12&PageSize=4"
+      )
+      .then(function (res) {
         console.log(res);
-        me.relatePro=res.data.data;
-      })
+        me.relatePro = res.data.data;
+      });
+    await axios
+      .get(`http://localhost:3000/prices/${me.proID}`)
+      .then(function (res) {
+        console.log(res);
+        me.selectedPrice = res.data[0].ImportPrice;
+      });
+      console.log(this.convertColor(this.colorPro[0].Color));
   },
 };
 </script>
@@ -443,7 +452,10 @@ table tr th {
   text-align: left;
 }
 table tr td {
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #dddddd!important;
+}
+tr:hover td{
+  background: none!important;
 }
 td,
 th {

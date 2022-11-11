@@ -1,49 +1,58 @@
-.t-container{
+.t-container {
     display: flex;
 }
-.t-logo{
+
+.t-logo {
     display: flex;
     justify-content: space-between;
     justify-items: center;
 }
-.t-admin{
+
+.t-admin {
     text-align: center;
     padding-top: 10px;
     font-size: 20px;
     font-weight: 500;
 }
-.t-logo img{
+
+.t-logo img {
     height: 60px;
     width: 60px;
     margin-left: 10px;
 }
-.t-menu{
+
+.t-menu {
     width: 250px;
     height: 100vh;
     background-color: rgb(220, 220, 220);
 }
-.t-menu-header{
+
+.t-menu-header {
     height: 48px;
     /* display: flex; */
     align-items: center;
     justify-content: center;
 }
-.t-menu-header .t-logo{
+
+.t-menu-header .t-logo {
     height: 32px;
     width: 96px;
 }
-.t-menu-listmenu{
+
+.t-menu-listmenu {
     overflow: auto;
     height: calc(100vh - 48px);
     color: black;
     padding-top: 14px;
     box-sizing: border-box;
 }
-a{
+
+a {
     color: black !important;
     text-decoration: none !important;
 }
-.t-menu-listmenu .t-menu-item{
+
+.t-menu-listmenu .t-menu-item {
     display: flex;
     align-items: center;
     height: 42px;
@@ -52,16 +61,23 @@ a{
     border-left: 6px solid transparent;
     cursor: pointer;
 }
-.t-menu-listmenu a:hover{
+
+.t-menu-listmenu a:hover {
     background: rgba(74, 74, 75, 0.2);
 }
+
+
 /*CSS phần content*/
-.t-content{
+
+.t-content {
     width: calc(100% - 250px);
     height: 100vh;
 }
+
+
 /** CSS phần header content*/
-.t-content .t-navbar-header{
+
+.t-content .t-navbar-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -70,39 +86,48 @@ a{
     padding-right: 20px;
     box-sizing: border-box;
 }
-.t-navbar-header .t-navbar-custom{
+
+.t-navbar-header .t-navbar-custom {
     display: flex;
     height: 48px;
     align-items: center;
     /* padding-left: 16px; */
 }
+
+
 /* icon */
-.t-icon-mithree{
+
+.t-icon-mithree {
     height: 24px;
     width: 24px;
     margin: 0 10px;
     background-image: url(../../src/assets/images/Sprites.64af8f61.svg);
     background-position: -843px -30px;
 }
-.t-branch{
+
+.t-branch {
     padding-left: 10px;
     cursor: pointer;
 }
-.t-navbar-user{
+
+.t-navbar-user {
     display: flex;
     align-items: center;
 }
-.t-user-notify{
+
+.t-user-notify {
     width: 24px;
     height: 24px;
     background-image: url(../../src/assets/images/Sprites.64af8f61.svg);
     background-position: -788px -30px;
 }
-.t-user-info{
+
+.t-user-info {
     display: flex;
     align-items: center;
 }
-.t-avatar{
+
+.t-avatar {
     width: 32px;
     height: 32px;
     background-image: url(../../src/assets/images/Sprites.64af8f61.svg);
@@ -110,47 +135,60 @@ a{
     margin-right: 6px;
     margin-left: 16px;
     border-radius: 50%;
-
 }
-.t-user-name{
+
+.t-user-name {
     margin-right: 8px;
     font-size: 14px;
     color: #111;
     cursor: pointer;
 }
-.t-icon-down{
+
+.t-icon-down {
     height: 14px;
     width: 14px;
     background-image: url(../../src/assets/images/Sprites.64af8f61.svg);
     background-position: -467px -408px;
 }
+
 .t-menu-item .t-item-icon {
     height: 24px;
     width: 24px;
     margin-right: 8px;
 }
-.icon{
+
+.icon {
     background-image: url(../../src/assets/images/Icon_process.1401a69c.svg);
 }
-.item-dashboard{
+
+.item-dashboard {
     background-position: -2px -3px;
 }
-.item-user{
+
+.item-user {
     background-position: -74px -29px;
 }
-.item-product{
+
+.item-product {
     background-position: -74px -3px;
 }
-.item-bill{
+
+.item-bill {
     background-position: -339px -27px;
 }
+
+
 /* Content */
-.t-main-table{
+
+.t-main-table {
     height: calc(100% - 88px);
     padding: 0 20px;
 }
+
+
 /*CSS phần content main*/
-.t-content-main{
+
+.t-content-main {
     background-color: #f1f1f1;
     height: calc(100vh - 48px);
     width: 100%;
@@ -159,7 +197,8 @@ a{
     flex-direction: column;
     box-sizing: border-box;
 }
-.t-main-header{
+
+.t-main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,12 +206,14 @@ a{
     margin-top: 14px;
     margin-bottom: 16px;
 }
-.t-header-title{
+
+.t-header-title {
     font-size: 24px;
     font-weight: 600;
     color: #111;
 }
-.t-button-add{
+
+.t-button-add {
     padding: 6px 16px;
     border: none;
     background-color: #515151;
@@ -182,45 +223,53 @@ a{
     font-size: 13px;
     font-weight: 700;
 }
-.t-button-add:hover{
-    background-color: black!important;
-}
-.t-button-add:focus{
-    background-color: black !important;
-}
-.t-button-add:active{
+
+.t-button-add:hover {
     background-color: black!important;
 }
 
-.t-main-body{
+.t-button-add:focus {
+    background-color: black !important;
+}
+
+.t-button-add:active {
+    background-color: black!important;
+}
+
+.t-main-body {
     background-color: #fff;
     height: calc(100% - 66px);
     width: 100%;
     box-sizing: border-box;
 }
+
+
 /* CSS search */
-.t-main-search{
+
+.t-main-search {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 72px;
     padding: 0 16px;
 }
-.t-search-right{
+
+.t-search-right {
     display: flex;
     align-items: center;
 }
 
-.t-search-gr{
+.t-search-gr {
     /* margin-right: 5px; */
     position: relative;
-   
 }
-.t-search-right input{
+
+.t-search-right input {
     border: 1px solid #babec5;
     outline: none;
 }
-.t-input{
+
+.t-input {
     width: 250px !important;
     height: 32px;
     min-width: 125px;
@@ -229,11 +278,12 @@ a{
     box-sizing: border-box;
     margin-right: 10px;
 }
-.t-input:placeholder-shown{
+
+.t-input:placeholder-shown {
     font-style: italic;
 }
 
-.t-icon-search{
+.t-icon-search {
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -243,7 +293,8 @@ a{
     padding-left: 10px;
     background-position: -990px -355px;
 }
-.t-icon-refresh{
+
+.t-icon-refresh {
     cursor: pointer;
     position: relative;
     width: 24px;
@@ -262,42 +313,51 @@ a{
     margin-right: 0!important;
 }
 
+
 /* CSS Table */
-.t-table{
+
+.t-table {
     position: relative;
     overflow: auto;
     max-height: calc(100% - 46px);
 }
 
-.t-table .t-table-viewer{
+.t-table .t-table-viewer {
     border-collapse: separate;
     border-spacing: 0;
     border: none;
 }
-thead{
+
+thead {
     position: sticky;
     top: 0;
     height: 34px;
     z-index: 10;
 }
-.t-table-viewer tr th,td{
+
+.t-table-viewer tr th,
+td {
     border-right: solid 1px #c7c7c7;
     border-bottom: solid 1px #c7c7c7;
 }
-.t-checkbox{
+
+.t-checkbox {
     width: 18px;
     height: 18px;
 }
-.t-checkbox-td{
+
+.t-checkbox-td {
     width: 40px;
     top: -87px;
     position: sticky;
-    left: 0; 
+    left: 0;
 }
-.checkbox{
+
+.checkbox {
     background-color: #fff;
 }
-.t-table-viewer tr{
+
+.t-table-viewer tr {
     height: 34px;
     border-bottom: 1px solid #bbb;
     padding: 0 10px;
@@ -305,25 +365,32 @@ thead{
     z-index: 15;
     box-sizing: border-box;
 }
-.t-table-viewer td{
+
+.t-table-viewer td {
     padding: 0 10px;
     height: 43px;
 }
-.t-table-viewer th{
+
+.t-table-viewer th {
     background-color: #f1f1f1;
     padding: 0 10px;
 }
-.t-table-viewer th:first-child{
+
+.t-table-viewer th:first-child {
     padding-left: 10px;
 }
-.t-table-viewer td:first-child{
+
+.t-table-viewer td:first-child {
     padding-left: 10px;
 }
-.t-table-viewer th:not(:last-child), table td:not(:last-child){
+
+
+/* .t-table-viewer th:not(:last-child), table td:not(:last-child){
     border-right: 1px solid #ddd;
     box-sizing: border-box;
-}
-.t-option{
+} */
+
+.t-option {
     min-width: 100px;
     width: 100px;
     right: 30px;
@@ -332,21 +399,27 @@ thead{
     text-align: center;
     border-left: 1px solid #c7c7c7;
 }
-.t-opiton-edit{
+
+.t-opiton-edit {
     background-color: #fff;
 }
-.t-opt-detail{
+
+.t-opt-detail {
     display: flex !important;
     justify-content: flex-end !important;
 }
-tr:hover td {
+
+
+/* tr:hover td {
     background-color: #f2f9ff!important;
-}
-.t-dropdown{
+} */
+
+.t-dropdown {
     display: flex;
     align-items: center;
 }
-.t-button{
+
+.t-button {
     color: rgb(0, 117, 192);
     border-radius: 3px 0px 0px 3px;
     cursor: pointer;
@@ -362,7 +435,8 @@ tr:hover td {
     text-align: center;
     align-items: flex-start;
 }
-.t-btn-edit{
+
+.t-btn-edit {
     font-weight: 600;
     position: relative;
     color: inherit;
@@ -373,95 +447,111 @@ tr:hover td {
     margin-left: 10px;
 }
 
-.text-align{
+.text-align {
     text-align: center;
 }
-.width-id{
+
+.width-id {
     min-width: 50px;
     width: 50px;
     top: -87px;
 }
-.width-name{
+
+.width-name {
     min-width: 350px;
     width: 350px;
     top: -87px;
 }
-.width-image{
+
+.width-image {
     min-width: 150px;
     width: 150px;
     top: -87px;
 }
-.width-des{
+
+.width-des {
     min-width: 300px;
     width: 300px;
     top: -87px;
     text-align: center;
 }
-.width-catid{
+
+.width-catid {
     min-width: 130px;
     width: 130px;
     top: -87px;
     text-align: center;
 }
-.width-material{
+
+.width-material {
     min-width: 200px;
     width: 200px;
     top: -87px;
 }
-.width-quantity{
+
+.width-quantity {
     min-width: 130px;
     width: 130px;
     top: -87px;
     text-align: center;
 }
-.width-status{
+
+.width-status {
     min-width: 100px;
     width: 100px;
     top: -87px;
     text-align: center;
 }
-.width-accountid{
+
+.width-accountid {
     min-width: 100px;
     width: 100px;
     top: -87px;
     text-align: center;
 }
-.width-fname{
+
+.width-fname {
     min-width: 50px;
     width: 50px;
     top: -87px;
     text-align: center;
 }
-.width-lname{
+
+.width-lname {
     min-width: 200px;
     width: 200px;
     top: -87px;
     text-align: center;
 }
-.width-phone{
+
+.width-phone {
     min-width: 150px;
     width: 150px;
     top: -87px;
     text-align: center;
 }
-.width-email{
+
+.width-email {
     min-width: 200px;
     width: 200px;
     top: -87px;
     text-align: center;
 }
-.width-accountid{
+
+.width-accountid {
     min-width: 100px;
     width: 100px;
     top: -87px;
     text-align: center;
 }
-.width-address{
+
+.width-address {
     min-width: 400px;
     width: 400px;
     top: -87px;
     text-align: center;
 }
+
 .td-btn {
     position: sticky;
     right: 0;
@@ -496,6 +586,7 @@ tr:hover td {
     height: 40px !important;
     cursor: pointer;
 }
+
 .tbl-btn-edit {
     display: flex;
     align-items: center;
@@ -504,6 +595,7 @@ tr:hover td {
     height: 40px !important;
     cursor: pointer;
 }
+
 .tbl-btn-delete i {
     width: 24px;
     height: 24px;
@@ -512,6 +604,7 @@ tr:hover td {
     -webkit-mask-position: -264px 0;
     background-color: #de1e1e!important;
 }
+
 .tbl-btn-edit i {
     width: 24px;
     height: 24px;
@@ -520,14 +613,17 @@ tr:hover td {
     -webkit-mask-position: -216px 0;
     background-color: #585656!important;
 }
+
 .tbl-btn-delete:hover {
     border-radius: 50%;
     background-color: #dadce3;
 }
+
 .tbl-btn-edit:hover {
     border-radius: 50%;
     background-color: #dadce3;
 }
+
 .block-delete {
     display: none;
 }
@@ -536,70 +632,87 @@ tr:hover .block-delete {
     display: block;
 }
 
-tr:hover td {
-    background-color: #dbf8ff !important;
-}
-
 tr:hover .input-add-user {
     background-color: #fff !important;
 }
-.table-add-user tr:hover .block-delete{
-    display: block !important; 
+
+.table-add-user tr:hover .block-delete {
+    display: block !important;
 }
 
 
 /**CSS Footer*/
-.t-footer{
+
+.t-footer {
     position: sticky;
     bottom: 0;
     top: 0;
     background-color: #fff;
 }
-.t-main-footer{
+
+.t-main-footer {
     padding-right: 12px;
     height: 46px;
     display: flex;
     align-items: center;
     justify-content: space-between
 }
-.t-footer-left{
+
+.t-footer-left {
     display: block;
 }
-.t-footer-right{
+
+.t-footer-right {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.mt-4{
+
+.mt-4 {
     margin: 0 16px;
 }
-.select-quantity{
+
+.select-quantity {
     height: 32px;
     margin: 16px;
 }
-.t-footer-page{
-    display: flex;    
+
+.t-footer-page {
+    display: flex;
 }
-.t-footer-page button{
+
+.t-footer-page button {
     border: none;
     background-color: transparent;
     padding: 5px;
 }
-.t-page-number .page-number-select{
+
+.t-page-number .page-number-select {
     border: 1px solid #ddd;
 }
-.el-input__wrapper{
+
+.el-input__wrapper {
     margin-right: 10px;
 }
+
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* CSS phân trang */
 
@@ -641,4 +754,3 @@ tr:hover .input-add-user {
 .el-pagination--small span:not([class*=suffix]) {
     color: #6a6788;
 }
-

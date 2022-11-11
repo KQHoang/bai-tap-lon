@@ -15,7 +15,7 @@ import ProDetail from './layout/product-detail.vue'
 const routes = [
     { path: '/mainproduct', component: MainProduct },
     { path: '/mainuser', component: MainUser },
-    { path: '/', component: HomeLayout },
+    { path: '/home', component: HomeLayout },
     { path: '/login', component: LoginLayout },
     { path: '/cart', component: CartVue },
     { path: '/detail/:id', component: ProDetail },

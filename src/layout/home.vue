@@ -251,16 +251,17 @@ export default {
       importPrice: 0,
       link: "",
       priceArray: [
-        "299.000",
-        "325.000",
-        "350.500",
-        "129.000",
-        "256.800",
-        "310.700",
-        "259.000",
-        "199.000",
+        "657.7424",
+        "627.7912",
+        "360.7741",
+        "192.1946",
+        "978.6584",
+        "828.9396",
+        "476.3993",
+        "312.8489",
       ],
-      priceNew:["129.000","150.000","169.500","105.200"]
+      priceNew:["129.000","150.000","169.500","105.200"],
+      logined:false,
     };
   },
   methods: {
@@ -268,10 +269,15 @@ export default {
   },
   computed: {},
   async created() {
+    var test=this.$route.query.test;
+    if(test=="test"){
+      this.logined=true;
+    }
+    console.log(test);
     var me = this;
     await axios
       .get(
-        "http://localhost:3000/products/paging?Filter=&PageIndex=4&PageSize=8"
+        "http://localhost:3000/products/paging?Filter=&PageIndex=5&PageSize=8"
       )
       .then(function (res) {
         me.toppro = res.data.data;
@@ -283,7 +289,7 @@ export default {
       });
     await axios
       .get(
-        "http://localhost:3000/products/paging?Filter=&PageIndex=10&PageSize=4"
+        "http://localhost:3000/products/paging?Filter=&PageIndex=1&PageSize=4"
       )
       .then(function (res) {
         console.log(res);
