@@ -112,15 +112,12 @@
                     <label for="">Màu sắc</label>
                   </td>
                   <td class="value">
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">Trắng</span>
+                    <div class="tawcvs-swatches"
+                    v-for="(c,index) in colorPro"
+                    :key="index">
+                      <span class="swatch swatch-label swatch-m">{{convertColor(colorPro[index].Color)}}</span>
                     </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">Be</span>
-                    </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">Rêu xanh</span>
-                    </div>
+                    
                   </td>
                 </tr>
                 <tr>
@@ -128,14 +125,11 @@
                     <label for="">Kích thước</label>
                   </td>
                   <td class="value">
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">M</span>
-                    </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">L</span>
-                    </div>
-                    <div class="tawcvs-swatches">
-                      <span class="swatch swatch-label swatch-m">XL</span>
+                    <div class="tawcvs-swatches"
+                    v-for="(s,index) in sizePro"
+                    :key="index"
+                    >
+                      <span class="swatch swatch-label swatch-m">{{convertSize(sizePro[index].Size)}}</span>
                     </div>
                   </td>
                 </tr>
@@ -283,9 +277,26 @@ export default {
       orderLast:{}, // phần tử cuối cùng trong mảng orders
       relatePro: [],
       selectedPrice: 0,
+      colorPro:[],
+      sizePro:[],
     };
   },
   methods: {
+    convertSize(size){
+      if(size==0) return "S";
+      if(size==1) return "M";
+      if(size==2) return "L";
+      if(size==3) return "XL";
+    },
+    convertColor(color){
+      if(color==0) return "Trắng";
+      if(color==1) return "Đen";
+      if(color==2) return "Xanh Navy";
+      if(color==3) return "Xám";
+      if(color==4) return "Be";
+      if(color==5) return "Xanh nhạt";
+      if(color==6) return "Vàng";
+    },
     incPro() {
       this.soluong += 1;
     },
@@ -349,6 +360,7 @@ export default {
   },
   async created() {
     this.proID = this.$route.params.id;
+    
     console.log(this.proID);
     var me = this;
     await axios
@@ -361,11 +373,14 @@ export default {
       .get(`http://localhost:3000/productColors/${me.proID}`)
       .then(function (res) {
         console.log(res);
+        me.colorPro=res.data;
+        console.log(me.colorPro);
       });
     await axios
       .get(`http://localhost:3000/productSizes/${me.proID}`)
       .then(function (res) {
         console.log(res);
+        me.sizePro=res.data;
       });
     await axios
       .get(
@@ -381,6 +396,7 @@ export default {
         console.log(res);
         me.selectedPrice = res.data[0].ImportPrice;
       });
+      console.log(this.convertColor(this.colorPro[0].Color));
   },
 };
 </script>

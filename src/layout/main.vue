@@ -304,7 +304,7 @@ export default {
       console.log(this.kt);
       if (this.kt == 1) {
         alert("Đăng nhập thành công!");
-        this.$router.push({path:'/home',params:{param1:'Hello'}});
+        this.$router.push({ path: "/home", params: { kt: '123' }, query:{test:'test'} });
       } else alert("Tài khoản hoặc mật khẩu không đúng!");
       this.kt = 0;
     },
