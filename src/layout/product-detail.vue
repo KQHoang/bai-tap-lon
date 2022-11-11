@@ -187,7 +187,6 @@
                   <p>
                     – Chất liệu: {{ this.selectedPro.Material }}<br />
                     – Kiểu dáng: RELAX<br />
-                    – Màu sắc: XANH RÊU, NÂU, BE<br />
                     –
                     <strong
                       >Sản phẩm đã có mặt ở toàn bộ các cửa hàng trên hệ
